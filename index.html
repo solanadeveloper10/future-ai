@@ -1012,22 +1012,6 @@
 
     <!-- Form submission -->
     <script>
-        // verify recaptcha
-        async function verifyRecaptcha(token) {
-            const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-                method: 'POST',
-                body: new URLSearchParams({
-                    secret: '6LcXKeIqAAAAAIeEaAV9yNx-hZAqArvnDyyF_FPa',
-                    response: token
-                })
-            });
-
-            const data = await response.json();
-            return data.success && data.score > 0.5; // Assuming score > 0.5 is considered a valid human
-        }
-
-
-
         // This function is called once the Supabase library is loaded
         function initSupabase() {
             const supabaseUrl = 'https://losjaorxkjcuiwuzmlun.supabase.co'; // Replace with your Supabase URL
@@ -1042,10 +1026,16 @@
                 // Get reCAPTCHA token
                 const token = await grecaptcha.execute('6LcXKeIqAAAAAJocgOIRfno1cIrKOC7saGPt1XfK', { action: 'submit' });
 
-                // Verify reCAPTCHA token
-                const isHuman = await verifyRecaptcha(token);
+                // Send token to your serverless function for validation
+                const response = await fetch('/api/verifyRecaptcha', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token })
+                });
 
-                if (!isHuman) {
+                const data = await response.json();
+
+                if (!data.success) {
                     alert("reCAPTCHA validation failed.");
                     return;
                 }
@@ -1054,7 +1044,7 @@
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('textarea-message').value;
 
-                const { data, error } = await supabase
+                const { error } = await supabase
                     .from('form_submission')
                     .insert([
                         {
@@ -1068,7 +1058,7 @@
                     console.error('Error:', error);
                     alert('Submission failed.');
                 } else {
-                    console.log('Form submitted:', data);
+                    console.log('Form submitted');
 
                     document.getElementById('contactForm').reset()
 
