@@ -517,7 +517,7 @@ if (isMobile) {
         // Scroll to top 
         // Requires "GSAP ScrollToPlugin" (https://greensock.com/docs/v2/Plugins/ScrollToPlugin)
         // ================================================================
-        scrollToTop: function () {  
+        scrollToTop: function () {
             $(".scroll-to-top").on("click", function () {
                 if (!isMobile) { // Not for mobile devices!
                     if ($("body").hasClass("tt-smooth-scroll")) {
@@ -720,45 +720,6 @@ if (isMobile) {
                     );
                 });
             }
-        },
-        // contact Form
-        contactForm: function () {
-            $(".contact-form").on("submit", function (e) {
-                e.preventDefault();
-                if ($(".contact-form").valid()) {
-                    var _self = $(this);
-                    _self
-                        .closest("div")
-                        .find('button[type="submit"]')
-                        .attr("disabled", "disabled");
-                    var data = $(this).serialize();
-                    $.ajax({
-                        url: "./assets/mail/contact.php",
-                        type: "post",
-                        dataType: "json",
-                        data: data,
-                        success: function (data) {
-                            $(".contact-form").trigger("reset");
-                            _self.find('button[type="submit"]').removeAttr("disabled");
-                            if (data.success) {
-                                document.getElementById("message").innerHTML =
-                                    "<h5 class='text-success mt-3 mb-2'>Email Sent Successfully</h5>";
-                            } else {
-                                document.getElementById("message").innerHTML =
-                                    "<h5 class='text-danger mt-3 mb-2'>There is an error</h5>";
-                            }
-                            $("#message").show("slow");
-                            $("#message").slideDown("slow");
-                            setTimeout(function () {
-                                $("#message").slideUp("hide");
-                                $("#message").hide("slow");
-                            }, 3000);
-                        },
-                    });
-                } else {
-                    return false;
-                }
-            });
         },
     };
     Init.i();
