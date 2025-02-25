@@ -1015,6 +1015,8 @@
         // This function is called once the Supabase library is loaded
         function initSupabase() {
             const supabaseUrl = 'https://losjaorxkjcuiwuzmlun.supabase.co'; // Replace with your Supabase URL
+
+            // Should move it to .env
             const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxvc2phb3J4a2pjdWl3dXptbHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0Nzc1NTIsImV4cCI6MjA1NjA1MzU1Mn0.AB5rW6Wf0T4V6HQ3Ej-Xo9gzAZM1LuW923y6ZPjlKQ0'; // Replace with your Supabase anon key
 
             const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
