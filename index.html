@@ -638,7 +638,7 @@
                 <section class="contact-area py-80" id="contact-us">
                     <div class="container-fluid">
                         <h2 class="mb-48">Get in <span class="gradient-stroke-text">TOUCH</span></h2>
-                        <div class="row align-items-center row-gap-4">
+                        <div class="row align-items-stretch row-gap-4">
                             <div class="col-xl-6">
                                 <div class="contacts-block">
                                     <h4 class="mb-32">Be among the first <br> to experience <br> the next era
@@ -653,71 +653,70 @@
                                     <ul class="unstyled social-icons-2">
                                         <li>
                                             <a href="">
-                                                <img src="/assets/media/icons/tg.png"
-                                                    class="contact-us-img" alt="Telegram">
+                                                <img src="/assets/media/icons/tg.png" class="contact-us-img"
+                                                    alt="Telegram">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
-                                                <img src="/assets/media/icons/x.png"
-                                                    class="contact-us-img" alt="X">
+                                                <img src="/assets/media/icons/x.png" class="contact-us-img" alt="X">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
-                                                <img src="/assets/media/icons/dexscreener.png"
-                                                    class="contact-us-img" alt="Dexscreener">
+                                                <img src="/assets/media/icons/dexscreener.png" class="contact-us-img"
+                                                    alt="Dexscreener">
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
-                                                <img src="/assets/media/icons/dextools.png"
-                                                    class="contact-us-img" alt="Dextools">
+                                                <img src="/assets/media/icons/dextools.png" class="contact-us-img"
+                                                    alt="Dextools">
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
+                            <div class="col-xl-6 form-block-container ">
                                 <div class="form-block">
                                     <form id="contactForm" class="contact-form">
-                                        <div class="row row-gap-4">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="text" name="name" id="name" required
-                                                        placeholder="Your Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <input type="email" name="email" id="email" required
-                                                        placeholder="example@gmail.com">
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <textarea name="message" id="textarea-message" rows="5" required
-                                                        placeholder="Why should we grant you early access?"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="bottom-row">
-                                                    <label class="custom-checkbox">
-                                                        <input name="dummy" type="checkbox">
-                                                        <span class="checkmark"></span>
-                                                        I agree to the processing of my personal data.
-                                                    </label>
-                                                    <button type="submit" class="cus-btn-sec">submit form<svg
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                            fill="none">
-                                                            <path
-                                                                d="M13.3545 17C13.3545 14 16.1545 10 19.3545 10M19.3545 10C17.5212 10 13.3545 9 13.3545 3M19.3545 10H0.354492"
-                                                                stroke="#1E1F20" stroke-width="2" />
-                                                        </svg></button>
-                                                </div>
-                                                <div id="message" class="alert-msg"></div>
+
+                                        <div class="form-name-container">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" required
+                                                    placeholder="Your Name">
                                             </div>
                                         </div>
+                                        <div class="form-email-container">
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" required
+                                                    placeholder="example@gmail.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-message-container">
+                                            <div class="form-group" style="height: 100%;">
+                                                <textarea name="message" id="textarea-message" rows="5" required
+                                                    placeholder="Why should we grant you early access?"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-footer-container">
+                                            <div class="bottom-row">
+                                                <label class="custom-checkbox">
+                                                    <input name="dummy" type="checkbox">
+                                                    <span class="checkmark"></span>
+                                                    I agree to the processing of my personal data.
+                                                </label>
+                                                <button type="submit" class="cus-btn-sec">submit form<svg
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="none">
+                                                        <path
+                                                            d="M13.3545 17C13.3545 14 16.1545 10 19.3545 10M19.3545 10C17.5212 10 13.3545 9 13.3545 3M19.3545 10H0.354492"
+                                                            stroke="#1E1F20" stroke-width="2" />
+                                                    </svg></button>
+                                            </div>
+                                            <div id="message" class="alert-msg"></div>
+                                        </div>
+
                                     </form>
                                 </div>
                             </div>
@@ -895,7 +894,7 @@
                                 <form action="index.html" class="mb-32">
                                     <div class="newsletter-field mx-auto">
                                         <div class="form-group">
-                                            <input type="email" name="newsletter" placeholder="Entre your mail">
+                                            <input type="email" name="newsletter" placeholder="Enter your email">
                                         </div>
                                         <button type="submit" class="cus-btn-sec">subscribe <svg
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
@@ -1029,6 +1028,9 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('textarea-message').value;
+                const dummy = document.getElementById('dummy').value;
+
+                if (dummy) { return; }
 
                 const { error } = await supabase
                     .from('form_submission')
