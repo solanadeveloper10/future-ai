@@ -991,9 +991,9 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('textarea-message').value;
-                const dummy = document.getElementById('dummy').value;
+                const dummyInput = document.getElementById('dummy');
 
-                if (dummy) { return; }
+                if (!dummyInput.value) { return; }
 
                 const { error } = await supabase
                     .from('form_submission')
